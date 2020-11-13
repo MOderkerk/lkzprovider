@@ -10,9 +10,9 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>de.oderkerk.tools</groupId>
-	<artifactId>LKZProvider</artifactId>
+	<artifactId>lkzprovider</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>LKZProvider</name>
+	<name>lkzprovider</name>
 	<description>Small database for accessing CountryCodes (in German)</description>
 
 	<properties>
