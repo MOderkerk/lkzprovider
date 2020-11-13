@@ -1,12 +1,9 @@
 stages:
   - analyze
   - compile
+  
 sudo: false
 language: java
-git:
-  depth: 1
-  quiet: true
-  submodules: false
 install: true
 cache:
   directories:
