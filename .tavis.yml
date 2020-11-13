@@ -1,8 +1,5 @@
 stages:
-  - analyze
   - compile
-  
-sudo: false
 language: java
 install: true
 cache:
@@ -16,12 +13,6 @@ before_script:
               
 jobs:
   include:
-    - stage: analyze 
-      jdk: 
-         - oraclejdk8  
-         - openjdk8  
-         - openjdk11         
-      script: mvn clean verify -Dmaven.test.skip
     - stage: compile  
       jdk: openjdk8  
       script:  
