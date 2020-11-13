@@ -128,5 +128,11 @@
 			</plugin>
 		</plugins>
 	</build>
-
+<distributionManagement>
+   <repository>
+     <id>github</id>
+     <name>moderkerk</name>
+     <url>https://maven.pkg.github.com/moderkerk/LKZProvider</url>
+   </repository>
+</distributionManagement>
 </project>
