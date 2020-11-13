@@ -22,8 +22,8 @@
 			<repositories>
 				<repository>
 					<id>github</id>
-					<name>moderkerk</name>
-					<url>https://maven.pkg.github.com/moderkerk/LKZProvider</url>
+					<name>GitHub OWNER Apache Maven Packages</name>
+					<url>https://maven.pkg.github.com/moderkerk/lkzprovider</url>
 				</repository>
 			</repositories>
 		</profile>
