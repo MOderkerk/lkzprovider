@@ -14,13 +14,11 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>lkzprovider</name>
 	<description>Small database for accessing CountryCodes (in German)</description>
-
 	<properties>
 		<java.version>1.8</java.version>
 		<springdoc.version>1.4.8</springdoc.version>
-		<springbootclient.version>2.3.0</springbootclient.version>
+		<springbootclient.version>2.3.0</springbootclient.version>		
 	</properties>
-
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -30,7 +28,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-rest</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
@@ -53,13 +50,10 @@
 			<artifactId>spring-boot-admin-starter-client</artifactId>
 			<version>${springbootclient.version}</version>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
-
-
 		<dependency>
 			<groupId>org.springdoc</groupId>
 			<artifactId>springdoc-openapi-ui</artifactId>
@@ -77,21 +71,9 @@
 			</exclusions>
 		</dependency>
 	</dependencies>
-
 	<build>
 		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>build-info</id>
-						<goals>
-							<goal>build-info</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
+
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
@@ -99,6 +81,12 @@
 					<jvmArguments>-Dspring.application.admin.enabled=true</jvmArguments>
 				</configuration>
 				<executions>
+					<execution>
+						<id>build-info</id>
+						<goals>
+							<goal>build-info</goal>
+						</goals>
+					</execution>
 					<execution>
 						<id>pre-integration-test</id>
 						<goals>
@@ -125,14 +113,14 @@
 						</goals>
 					</execution>
 				</executions>
-			</plugin>
-		</plugins>
+			</plugin>			
+		</plugins>		
 	</build>
 	<distributionManagement>
 		<repository>
 			<id>github</id>
 			<name>Githubpages</name>
 			<url>https://maven.pkg.github.com/moderkerk/lkzprovider</url>
-		</repository>		 
+		</repository>
 	</distributionManagement>
 </project>
