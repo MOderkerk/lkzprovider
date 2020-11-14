@@ -7,13 +7,13 @@ import lombok.Data;
 @Schema(description = "Standard error message of the application",title = "Error Message")
 public class ErrorResponse {
 
-	@Schema(description = "Error number identifying the error occured")
+	@Schema(description = "Fehlernummer")
 	private int errorNo;
-	@Schema(description = "Errortext descripbing the error in prosa")
+	@Schema(description = "Fehlertext in prosa")
 	private String errorText;
-	@Schema(description = "Timestamp of the creation of the error")
+	@Schema(description = "Zeitstempel zu dem der Fehler auftrat")
 	private String errorTimestamp;
-	@Schema(description = "Request Id for tracing the error in the log files")
+	@Schema(description = "Eindeutiger Schlüssel für die Analyse von Fehlern")
 	private String uniqueID;
 	
 
