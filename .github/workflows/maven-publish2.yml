@@ -25,7 +25,7 @@ jobs:
         settings-path: ${{ github.workspace }}    
     - name: Code Climate Test Reporter
       uses: aktions/codeclimate-test-reporter@v1
-       with:
+      with:
         codeclimate-test-reporter-id: ${{ secrets.COVERALLS }}
         command: after-build
     - name: Build with Maven
