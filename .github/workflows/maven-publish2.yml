@@ -23,15 +23,11 @@ jobs:
         java-version: 1.8
         server-id: github  
         settings-path: ${{ github.workspace }}    
-    - name: Test & publish code coverage
-      uses: paambaati/codeclimate-action@v2.7.4
-      env:      
-        CC_TEST_REPORTER_ID: ${{secrets.COVERALLS}}
-        JACOCO_SOURCE_PATH: "${{github.workspace}}/src/main/java"
-      with:
-      # The report file must be there, otherwise Code Climate won't find it
-        coverageCommand: mvn test --file pom.xml
-        coverageLocations: ${{github.workspace}}/target/site/jacoco/jacoco.xml:jacoco
+    - name: Code Climate Test Reporter
+      uses: aktions/codeclimate-test-reporter@v1
+       with:
+        codeclimate-test-reporter-id: ${{ secrets.COVERALLS }}
+        command: after-build
     - name: Build with Maven
       run: mvn -B package --file pom.xml  -DskipTests=true
 
