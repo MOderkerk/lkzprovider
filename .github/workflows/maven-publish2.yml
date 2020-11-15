@@ -4,9 +4,6 @@
 name: Maven Package
 
 on:  
-  push:
-   branches:
-      - master
   release:
     types: [created]
 
@@ -23,13 +20,9 @@ jobs:
         java-version: 1.8
         server-id: github  
         settings-path: ${{ github.workspace }}    
-    - name: Code Climate Test Reporter
-      uses: aktions/codeclimate-test-reporter@v1
-      with:
-        codeclimate-test-reporter-id: ${{ secrets.COVERALLS }}
-        command: after-build
+   
     - name: Build with Maven
-      run: mvn -B package --file pom.xml  -DskipTests=true
+      run: mvn -B package --file pom.xml  
 
     - name: Publish to GitHub Packages Apache Maven
       run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml -DskipTests=true
