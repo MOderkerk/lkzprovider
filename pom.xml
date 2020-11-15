@@ -17,7 +17,7 @@
 	<properties>
 		<java.version>1.8</java.version>
 		<springdoc.version>1.4.8</springdoc.version>
-		<springbootclient.version>2.3.0</springbootclient.version>		
+		<springbootclient.version>2.3.0</springbootclient.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -44,6 +44,8 @@
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
 		</dependency>
+
+
 		<!-- https://mvnrepository.com/artifact/de.codecentric/spring-boot-admin-starter-client -->
 		<dependency>
 			<groupId>de.codecentric</groupId>
@@ -114,7 +116,20 @@
 					</execution>
 				</executions>
 			</plugin>			
-		</plugins>		
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>0.7.6.201602180812</version>
+				<executions>
+					<execution>
+						<id>prepare-agent</id>
+						<goals>
+							<goal>prepare-agent</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
 	</build>
 	<distributionManagement>
 		<repository>
