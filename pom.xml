@@ -11,13 +11,13 @@
 	</parent>
 	<groupId>de.oderkerk.tools</groupId>
 	<artifactId>lkzprovider</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>lkzprovider</name>
 	<description>Small database for accessing CountryCodes (in German)</description>
 	<properties>
 		<java.version>1.8</java.version>
 		<springdoc.version>1.4.8</springdoc.version>
-		<springbootclient.version>2.3.0</springbootclient.version>		
+		<springbootclient.version>2.3.0</springbootclient.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -44,6 +44,8 @@
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
 		</dependency>
+
+
 		<!-- https://mvnrepository.com/artifact/de.codecentric/spring-boot-admin-starter-client -->
 		<dependency>
 			<groupId>de.codecentric</groupId>
@@ -114,7 +116,8 @@
 					</execution>
 				</executions>
 			</plugin>			
-		</plugins>		
+			
+		</plugins>
 	</build>
 	<distributionManagement>
 		<repository>
