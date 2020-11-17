@@ -16,6 +16,7 @@ import org.springframework.web.context.request.WebRequest;
 import de.oderkerk.tools.lkz.entity.rest.responses.ErrorResponse;
 import de.oderkerk.tools.lkz.exception.NoDataFoundException;
 import de.oderkerk.tools.lkz.rest.logging.Slf4jMDCFilterConfiguration;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * Controller-Advice for Handling all thrown exceptions
@@ -25,6 +26,7 @@ import de.oderkerk.tools.lkz.rest.logging.Slf4jMDCFilterConfiguration;
  *
  */
 @RestControllerAdvice
+@Slf4j
 public class RestControllerErrorHandler {
 
 	@ExceptionHandler(NoDataFoundException.class)
@@ -35,6 +37,7 @@ public class RestControllerErrorHandler {
 		errorResponse.setErrorText(" " + ex.getMessage() + " not found");
 		errorResponse.setErrorTimestamp(Timestamp.from(Instant.now()).toString());
 		errorResponse.setUniqueID(getUUID());
+		log.error("Errorresponse {}",errorResponse.toString() );
 		return errorResponse;
 	}
 

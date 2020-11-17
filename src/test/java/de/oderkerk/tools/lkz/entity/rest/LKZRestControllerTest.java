@@ -14,6 +14,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.ResponseEntity;
 
 import de.oderkerk.tools.lkz.entity.LKZEntity;
+import de.oderkerk.tools.lkz.entity.rest.responses.AutocompleteLaendernameResponse;
 import de.oderkerk.tools.lkz.entity.rest.responses.LKZResponse;
 import de.oderkerk.tools.lkz.exception.NoDataFoundException;
 
@@ -108,6 +109,26 @@ class LKZRestControllerTest {
 		}
 		catch (Exception ex) {
 			fail("Exception occured but not exspected");
+		}
+	}
+	@Test
+	void autoCompleteTestOk() {
+		try {
+			ResponseEntity<List<AutocompleteLaendernameResponse>> result = controllerToTest.autocompleteLaendername("deut");
+			assertEquals("Deutschland", result.getBody().get(0).getLaendername());			
+		}
+		catch (Exception ex) {
+			fail("Exception occured but not exspected :" +ex.getMessage());
+		}
+	}
+	@Test
+	void autoCompleteTestNOk() {
+		try {
+			ResponseEntity<List<AutocompleteLaendernameResponse>> result = controllerToTest.autocompleteLaendername("xxxxxx");
+			
+		}
+		catch (Exception ex) {
+			assertNotNull(ex);
 		}
 	}
 	@Test

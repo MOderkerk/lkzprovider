@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import de.oderkerk.tools.lkz.entity.LKZEntity;
+import de.oderkerk.tools.lkz.entity.rest.responses.AutocompleteLaendernameResponse;
 import de.oderkerk.tools.lkz.entity.rest.responses.LKZResponse;
 import de.oderkerk.tools.lkz.exception.NoDataFoundException;
 import de.oderkerk.tools.lkz.repository.LKZRepository;
@@ -125,6 +126,31 @@ public class LKZRestController implements Serializable{
 		else
 		{
 			throw new NoDataFoundException(kfz);
+		}
+	}
+	
+	@GetMapping("/autocomplete/{laendernameInput}")
+	@ApiResponses(value = {
+	@ApiResponse(responseCode = "404", description = "No data found with part of laendername countrycode"),
+	@ApiResponse(responseCode = "200", description = "Data found and list of LKZResponses  send to caller") })	
+	@Parameter(name = "laendernameInput",description = "partitial laendername for autocomplete of name",in = ParameterIn.PATH,required = true)
+	@Operation(summary = "Read laendername for autocompletion", description = "Function to autocomplete country name.")
+	public ResponseEntity<List<AutocompleteLaendernameResponse>> autocompleteLaendername(@PathVariable String laendernameInput) throws NoDataFoundException
+	{
+		log.debug("Try autocomplete with  = {} started",laendernameInput);
+		List<LKZEntity> result = lkzRepository.findByLaendernameContainingIgnoreCase(laendernameInput);
+		if (!result.isEmpty())
+		{
+			List<AutocompleteLaendernameResponse> response = new ArrayList<>();
+			for (LKZEntity entity:result)
+			{
+				response.add(new AutocompleteLaendernameResponse(entity.getLaendername()));
+			}
+			return new ResponseEntity<>(response,HttpStatus.OK);
+		}
+		else
+		{
+			throw new NoDataFoundException(laendernameInput);
 		}
 	}
 
