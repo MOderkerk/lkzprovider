@@ -17,6 +17,12 @@ Die Open-Api Version 3 Dokumentation kann unter dem Endpunkt <adresse/ip>:port/v
 
 (Beispiel: http://localhost:8080/v3/api-docs) abgerufen werden.
 
+# DATENQUELLEN: 
+Die enthaltenen Daten stammen von verschiedenen öffentlichen Datenquellen :
+https://www.destatis.de/DE/Methoden/Klassifikationen/Staat-Gebietsystematik/Staatsangehoerigkeitsgebietsschluessel_pdf.pdf?__blob=publicationFile Stand 05.11.2020
+
+Wikipedia.org
+
 # Konfiguration 
 In der Anwendung ist die folgende Standard Konfiguration hinterlegt, sofern Du nicht deine eigene application.properties / yml anlegst:
  
