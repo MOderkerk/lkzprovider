@@ -19,7 +19,7 @@ Die Open-Api Version 3 Dokumentation kann unter dem Endpunkt <adresse/ip>:port/v
 
 # Konfiguration 
 In der Anwendung ist die folgende Standard Konfiguration hinterlegt, sofern Du nicht deine eigene application.properties / yml anlegst:
-
+ 
 ```
 ################################################################################################
 ## A U S W A H L   D A T E N Q U E L L E 
