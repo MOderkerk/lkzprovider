@@ -5,6 +5,7 @@ Folgende Eingaben werden in der aktuellen Version untertsützt:
 * iso31661-2
 * iso31661-3
 * Kfz Länderkennzeichen
+* Autocomplete funktion für Ländernamen (case insensitive)
 
 # API Dokumentation
 
