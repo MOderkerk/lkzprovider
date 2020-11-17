@@ -22,5 +22,7 @@ public interface LKZRepository extends CrudRepository<LKZEntity, String> {
 	public Optional<LKZEntity> findByIso316613(String isoString);
 	
 	public List<LKZEntity> findByKfzKennzeichen(String kfzKennzeichen);
+	
+	public List<LKZEntity> findByLaendernameContainingIgnoreCase(String laendername);
 
 }
