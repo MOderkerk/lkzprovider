@@ -1,4 +1,4 @@
-package de.oderkerk.tools.lkz.entity.rest;
+package de.oderkerk.tools.lkz.rest;
 
 
 

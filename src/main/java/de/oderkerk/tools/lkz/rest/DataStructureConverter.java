@@ -1,7 +1,7 @@
 /**
  * 
  */
-package de.oderkerk.tools.lkz.entity.rest;
+package de.oderkerk.tools.lkz.rest;
 
 import de.oderkerk.tools.lkz.entity.LKZEntity;
 import de.oderkerk.tools.lkz.entity.rest.responses.LKZResponse;

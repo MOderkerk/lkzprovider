@@ -1,4 +1,4 @@
-package de.oderkerk.tools.lkz.entity.rest;
+package de.oderkerk.tools.lkz.rest;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -17,6 +17,7 @@ import de.oderkerk.tools.lkz.entity.LKZEntity;
 import de.oderkerk.tools.lkz.entity.rest.responses.AutocompleteLaendernameResponse;
 import de.oderkerk.tools.lkz.entity.rest.responses.LKZResponse;
 import de.oderkerk.tools.lkz.exception.NoDataFoundException;
+import de.oderkerk.tools.lkz.rest.LKZRestController;
 
 @SpringBootTest
 class LKZRestControllerTest {
