@@ -14,10 +14,10 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.ResponseEntity;
 
 import de.oderkerk.tools.lkz.entity.LKZEntity;
-import de.oderkerk.tools.lkz.entity.rest.responses.AutocompleteLaendernameResponse;
-import de.oderkerk.tools.lkz.entity.rest.responses.LKZResponse;
 import de.oderkerk.tools.lkz.exception.NoDataFoundException;
 import de.oderkerk.tools.lkz.rest.LKZRestController;
+import de.oderkerk.tools.lkz.rest.responses.AutocompleteLaendernameResponse;
+import de.oderkerk.tools.lkz.rest.responses.LKZResponse;
 
 @SpringBootTest
 class LKZRestControllerTest {
