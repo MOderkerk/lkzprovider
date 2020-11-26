@@ -14,7 +14,7 @@ public class NoDataFoundException extends Exception {
 	private static final long serialVersionUID = -1022002010211607678L;
 
 	public NoDataFoundException(String message) {
-		super("No data found for Input:"+message);
+		super(" Für den Suchbegriff "+message +" wurde kein Ergebnis geliefert");
 	}
 
 }

@@ -1,10 +1,10 @@
 /**
  * 
  */
-package de.oderkerk.tools.lkz.entity.rest;
+package de.oderkerk.tools.lkz.rest;
 
 import de.oderkerk.tools.lkz.entity.LKZEntity;
-import de.oderkerk.tools.lkz.entity.rest.responses.LKZResponse;
+import de.oderkerk.tools.lkz.rest.responses.LKZResponse;
 
 /**
  * Helper for transfering data between different structures

@@ -1,4 +1,4 @@
-package de.oderkerk.tools.lkz.entity.rest;
+package de.oderkerk.tools.lkz.rest;
 
 
 
@@ -10,16 +10,17 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import de.oderkerk.tools.lkz.entity.LKZEntity;
-import de.oderkerk.tools.lkz.entity.rest.responses.AutocompleteLaendernameResponse;
-import de.oderkerk.tools.lkz.entity.rest.responses.LKZResponse;
 import de.oderkerk.tools.lkz.exception.NoDataFoundException;
 import de.oderkerk.tools.lkz.repository.LKZRepository;
+import de.oderkerk.tools.lkz.rest.responses.AutocompleteLaendernameResponse;
+import de.oderkerk.tools.lkz.rest.responses.LKZResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.enums.ParameterIn;
@@ -36,6 +37,7 @@ import lombok.extern.slf4j.Slf4j;
 @RestController
 @RequestMapping(path = "api/lkz")
 @Slf4j
+@CrossOrigin(allowedHeaders = "*",origins = "*")
 public class LKZRestController implements Serializable{
 
 	
@@ -112,7 +114,7 @@ public class LKZRestController implements Serializable{
 	@Operation(summary = "Read with kfz countrycode", description = "Function to read additional data from the Database with the countryname. Database only supports german names of countries")
 	public ResponseEntity<List<LKZResponse>> readwithKFZLKZ(@PathVariable String kfz) throws NoDataFoundException
 	{
-		log.debug("Read With Iso3 = {} started",kfz);
+		log.debug("Read With KFZ = {} started",kfz);
 		List<LKZEntity> result = lkzRepository.findByKfzKennzeichen(kfz.toUpperCase());
 		if (!result.isEmpty())
 		{

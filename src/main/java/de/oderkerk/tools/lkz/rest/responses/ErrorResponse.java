@@ -1,4 +1,4 @@
-package de.oderkerk.tools.lkz.entity.rest.responses;
+package de.oderkerk.tools.lkz.rest.responses;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
