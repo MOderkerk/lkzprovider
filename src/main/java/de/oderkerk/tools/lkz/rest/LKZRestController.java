@@ -60,6 +60,7 @@ public class LKZRestController implements Serializable{
 		Optional<LKZEntity> result = lkzRepository.findById(laendername);
 		if (result.isPresent())
 		{
+			log.debug("Result : {}",result.toString());
 			return new ResponseEntity<>(DataStructureConverter.convertFromLKZEntityToLKZResponse(result.get()),HttpStatus.OK);
 		}
 		else
@@ -80,6 +81,7 @@ public class LKZRestController implements Serializable{
 		Optional<LKZEntity> result = lkzRepository.findByIso316612(isokz.toUpperCase());
 		if (result.isPresent())
 		{
+			log.debug("Result : {}",result.toString());
 			return new ResponseEntity<>(DataStructureConverter.convertFromLKZEntityToLKZResponse(result.get()),HttpStatus.OK);
 		}
 		else
@@ -99,6 +101,7 @@ public class LKZRestController implements Serializable{
 		Optional<LKZEntity> result = lkzRepository.findByIso316613(isokz.toUpperCase());
 		if (result.isPresent())
 		{
+			log.debug("Result : {}",result.toString());
 			return new ResponseEntity<>(DataStructureConverter.convertFromLKZEntityToLKZResponse(result.get()),HttpStatus.OK);
 		}
 		else
@@ -122,6 +125,12 @@ public class LKZRestController implements Serializable{
 			for (LKZEntity entity:result)
 			{
 				response.add(DataStructureConverter.convertFromLKZEntityToLKZResponse(entity));
+				
+			}
+			if (log.isDebugEnabled())
+			{
+				log.debug("Result :");
+				log.debug(response.toString());
 			}
 			return new ResponseEntity<>(response,HttpStatus.OK);
 		}
@@ -148,6 +157,7 @@ public class LKZRestController implements Serializable{
 			{
 				response.add(new AutocompleteLaendernameResponse(entity.getLaendername()));
 			}
+			log.debug("Autocomplete found {} entries",response.size());
 			return new ResponseEntity<>(response,HttpStatus.OK);
 		}
 		else
