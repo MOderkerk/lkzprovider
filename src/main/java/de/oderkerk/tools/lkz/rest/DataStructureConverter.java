@@ -14,6 +14,7 @@ import de.oderkerk.tools.lkz.rest.responses.LKZResponse;
  */
 public class DataStructureConverter {
 
+	private static final String QUELLE="DatenQuelle: https://www.destatis.de Stand 12.11.2020, Auswärtiges Amt der Bundesrepublik Deutschland";
 	/**
 	 * Fill new Repsonse from LKZEntity
 	 * @param entity with source data
@@ -28,6 +29,6 @@ public class DataStructureConverter {
 				entity.getIso316613(), entity.getIso31661num(),  entity.getIcao(),
 				entity.getDestatisAussenhandelsCode(), entity.getKfzKennzeichen(),
 				entity.getLaenderzusatzAdressFeldPost(),entity.getDBankLKZ2(), entity.getDBankLKZnum(),
-				entity.getDBankLandkuerzel(), entity.getDBankwaehrungcode(),"DatenQuelle: https://www.destatis.de Stand 12.11.2020");
+				entity.getDBankLandkuerzel(), entity.getDBankwaehrungcode(),entity.getVollform(),QUELLE);
 	}
 }

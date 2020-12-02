@@ -55,6 +55,8 @@ public class LKZEntity {
 	private String kfzKennzeichen;
 	@Column(length=80,name="postadrfeld")
 	private String laenderzusatzAdressFeldPost;
+	@Column(length=80,name="vollform")
+	private String vollform;
 	
 	
 }
