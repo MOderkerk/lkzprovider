@@ -15,4 +15,5 @@ CREATE TABLE IF NOT EXISTS lkz(
   ,aussenhandelcode VARCHAR(2)
   ,kfzKennzeichen   VARCHAR(3)
   ,postadrfeld      VARCHAR(80)
+  ,vollform         VARCHAR(80)
 );

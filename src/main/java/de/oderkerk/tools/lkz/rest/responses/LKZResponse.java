@@ -66,7 +66,10 @@ public class LKZResponse {
 	@Schema(description = "Waehrungscode der Bundesbank", nullable = true)
 	private String bankWaehrungcode;
 	
-	@Schema(description = "Nachweis Datenquelle und Datenstand",defaultValue = "DatenQuelle: https://www.destatis.de Stand 12.11.2020")
+	@Schema(description = "Vollform des Landes",nullable = true)
+	private String vollform;
+	
+	@Schema(description = "Nachweis Datenquelle und Datenstand",defaultValue = "DatenQuelle: https://www.destatis.de Stand 12.11.2020, Auswärtiges Amt der Bundesrepublik Deutschland")
 	private String datenquelle;
 
 
