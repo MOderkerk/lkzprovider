@@ -1,4 +1,6 @@
 # LKZProvider
+![CodeQL](https://github.com/MOderkerk/lkzprovider/workflows/CodeQL/badge.svg)
+![Maven Package](https://github.com/MOderkerk/lkzprovider/workflows/Maven%20Package/badge.svg?branch=1.1.0)
 Applikation zum Lesen und Konvertierung von Ländernamen und Länderkennzeichen. 
 Folgende Eingaben werden in der aktuellen Version untertsützt:
 * Ländername (Case-Sensitiv)
