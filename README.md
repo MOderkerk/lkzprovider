@@ -92,4 +92,4 @@ spring.datasource.sql-script-encoding=UTF-8
 spring.data.rest.detection-strategy=visibility
 
 ```
-
+ 
